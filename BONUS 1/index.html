@@ -33,7 +33,7 @@
                     <div class="next" @click="nextThumb()"></div>
 
                     <!-- SIDE IMAGE -->
-                    <div v-for="(image, index) in slides" class="thumb" :class="{'active': index === currentSelectedElement}">
+                    <div @click="smallThumbSelect(index)" v-for="(image, index) in slides" class="thumb" :class="{'active': index === currentSelectedElement}">
                         <img :src="slides[index].image" alt="slides[index].title"/>
                     </div>
                 </div>

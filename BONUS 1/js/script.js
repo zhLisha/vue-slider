@@ -48,6 +48,10 @@ var app = new Vue(
                 } else {
                     this.currentSelectedElement = this.slides.length - 1;
                 }
+            },
+
+            smallThumbSelect(elementIndex) {
+                this.currentSelectedElement = elementIndex;
             }
         }
     }
