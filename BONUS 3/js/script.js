@@ -55,10 +55,20 @@ var app = new Vue(
             smallThumbSelect(elementIndex) {
                 this.currentSelectedElement = elementIndex;
             },
-            
+
+            stopAutoPlay() {
+                clearInterval(this.autoPlayStart);
+                this.autoPlayStart = null;
+            },
+
+            autoPlay() {
+                if(this.autoPlayStart === null) {
+                    this.autoPlayStart = setInterval(this.nextThumb, 3000);
+                }
+            }
         },
         mounted() {
-            this.autoPlayStart = setInterval(this.nextThumb, 3000);
+            this.autoPlay();
         }
     }
 )

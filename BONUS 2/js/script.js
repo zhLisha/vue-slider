@@ -55,7 +55,6 @@ var app = new Vue(
             smallThumbSelect(elementIndex) {
                 this.currentSelectedElement = elementIndex;
             },
-            
         },
         mounted() {
             this.autoPlayStart = setInterval(this.nextThumb, 3000);
